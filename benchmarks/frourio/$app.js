@@ -35,9 +35,7 @@ exports.controllers = () => {
             methods: [
                 {
                     name: 'get',
-                    handlers: [
-                        methodsToHandler(_controller_1.default.get)
-                    ]
+                    handlers: methodsToHandler(_controller_1.default.get)
                 }
             ]
         }
