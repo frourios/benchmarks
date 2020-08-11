@@ -3,11 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.run = exports.controllers = exports.createMiddleware = void 0;
-const express_1 = __importDefault(require("express"));
-const fastify_1 = __importDefault(require("fastify"));
-const helmet_1 = __importDefault(require("helmet"));
-const cors_1 = __importDefault(require("cors"));
+exports.apply = exports.controllers = exports.createMiddleware = void 0;
 exports.createMiddleware = (handler) => (Array.isArray(handler) ? handler : [handler]);
 const _controller_1 = __importDefault(require("./api/@controller"));
 const methodsToHandler = (methodCallback) => async (req, res) => {
@@ -46,23 +42,13 @@ exports.controllers = () => {
         }
     ];
 };
-exports.run = async (config) => {
-    const app = fastify_1.default();
-    await app.register(require('fastify-express'));
-    if (config.helmet)
-        app.use(helmet_1.default(config.helmet === true ? {} : config.helmet));
-    if (config.cors)
-        app.use(cors_1.default(config.cors === true ? {} : config.cors));
-    const router = express_1.default.Router();
-    const basePath = config.basePath ? `/${config.basePath}`.replace('//', '/') : '';
+exports.apply = (app, config = {}) => {
+    var _a;
     const ctrls = exports.controllers();
     for (const ctrl of ctrls) {
         for (const method of ctrl.methods) {
-            router[method.name](`${basePath}${ctrl.path}`, method.handlers);
+            app[method.name](`${(_a = config.basePath) !== null && _a !== void 0 ? _a : ''}${ctrl.path}`, method.handlers);
         }
     }
-    app.use(router);
-    await app.listen(config.port);
-    console.log(`Frourio is running on http://localhost:${config.port}`);
-    return { app };
+    return app;
 };
