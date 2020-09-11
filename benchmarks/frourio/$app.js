@@ -3,9 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.apply = exports.controllers = exports.createMiddleware = void 0;
-exports.createMiddleware = (handler) => (Array.isArray(handler) ? handler : [handler]);
-const _controller_1 = __importDefault(require("./api/@controller"));
+exports.defineHooks = void 0;
+function defineHooks(hooks, cb) {
+    return typeof hooks === 'function' ? hooks() : { ...cb(hooks), inject: (d) => cb(d) };
+}
+exports.defineHooks = defineHooks;
+const controller_1 = __importDefault(require("./api/controller"));
 const methodsToHandler = (methodCallback) => async (req, res) => {
     try {
         const result = methodCallback({
@@ -27,26 +30,9 @@ const methodsToHandler = (methodCallback) => async (req, res) => {
         res.sendStatus(500);
     }
 };
-exports.controllers = () => {
-    return [
-        {
-            path: '/',
-            methods: [
-                {
-                    name: 'get',
-                    handlers: methodsToHandler(_controller_1.default.get)
-                }
-            ]
-        }
-    ];
-};
-exports.apply = (app, config = {}) => {
+exports.default = (app, options = {}) => {
     var _a;
-    const ctrls = exports.controllers();
-    for (const ctrl of ctrls) {
-        for (const method of ctrl.methods) {
-            app[method.name](`${(_a = config.basePath) !== null && _a !== void 0 ? _a : ''}${ctrl.path}`, method.handlers);
-        }
-    }
+    const basePath = (_a = options.basePath) !== null && _a !== void 0 ? _a : '';
+    app.get(`${basePath}/`, methodsToHandler(controller_1.default.get));
     return app;
 };
