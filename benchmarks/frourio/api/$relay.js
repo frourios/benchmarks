@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defineController = exports.defineHooks = void 0;
-const _app_1 = require("../$app");
-Object.defineProperty(exports, "defineHooks", { enumerable: true, get: function () { return _app_1.defineHooks; } });
+function defineHooks(hooks, cb) {
+    return typeof hooks === 'function' ? hooks() : { ...cb(hooks), inject: (d) => cb(d) };
+}
+exports.defineHooks = defineHooks;
 function defineController(methods, cb) {
     return typeof methods === 'function' ? methods() : { ...cb(methods), inject: (d) => cb(d) };
 }

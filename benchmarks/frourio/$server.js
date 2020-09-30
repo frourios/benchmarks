@@ -3,11 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.defineHooks = void 0;
-function defineHooks(hooks, cb) {
-    return typeof hooks === 'function' ? hooks() : { ...cb(hooks), inject: (d) => cb(d) };
-}
-exports.defineHooks = defineHooks;
 const controller_1 = __importDefault(require("./api/controller"));
 const methodsToHandler = (methodCallback) => async (req, res) => {
     try {
