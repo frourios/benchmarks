@@ -2,7 +2,7 @@ const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   mode: 'production',
-  entry: './frourio/packages/frourio/servers/frourio.ts',
+  entry: './frourio/index.ts',
   output: {
     filename: 'benchmarks/frourio.js',
     path: __dirname
@@ -12,13 +12,7 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'ts-loader',
-        options: {
-          transpileOnly: true,
-          compilerOptions: {
-            module: 'esnext',
-            target: 'es2018'
-          }
-        }
+        options: { transpileOnly: true }
       }
     ]
   },

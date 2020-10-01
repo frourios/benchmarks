@@ -19,7 +19,11 @@ jobs:
         node-version: 12
     - name: run benchmarks
       run: |
-        npm install
+        yarn install
+        cd frourio
+        npx frourio
+        cd ..
+        npx webpack
         npm start y 100 10 40
     - name: commit benchmarks
       run: |
