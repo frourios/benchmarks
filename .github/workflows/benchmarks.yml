@@ -23,6 +23,9 @@ jobs:
         cd frourio
         npx frourio
         cd ..
+        cd frourio-fastify
+        npx frourio-fastify
+        cd ..
         npx webpack
         npm start y 100 10 40
     - name: commit benchmarks
