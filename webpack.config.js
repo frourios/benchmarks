@@ -2,9 +2,12 @@ const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
   mode: 'production',
-  entry: './frourio/index.ts',
+  entry: {
+    frourio: './frourio/index.ts',
+    'frourio-fastify': './frourio-fastify/index.ts'
+  },
   output: {
-    filename: 'benchmarks/frourio.js',
+    filename: 'benchmarks/[name].js',
     path: __dirname
   },
   module: {

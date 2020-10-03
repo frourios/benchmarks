@@ -57,5 +57,5 @@ package-lock.json
 
 # benchmark results
 results
-benchmarks/frourio.js
-frourio/**/$*.ts
+benchmarks/frourio*.js
+$*.ts
