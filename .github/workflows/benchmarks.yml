@@ -26,7 +26,7 @@ jobs:
         cd frourio-fastify
         npx frourio-fastify
         cd ..
-        npx webpack
+        npx tsc
         npm start y 100 10 40
     - name: commit benchmarks
       run: |
