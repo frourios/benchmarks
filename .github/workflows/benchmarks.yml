@@ -20,12 +20,12 @@ jobs:
     - name: run benchmarks
       run: |
         yarn install
-        cd frourio
+        cd src/frourio
         npx frourio
-        cd ..
-        cd frourio-fastify
+        cd ../../
+        cd src/frourio-fastify
         npx frourio-fastify
-        cd ..
+        cd ../../
         npx tsc
         npm start y 100 10 40
     - name: commit benchmarks
