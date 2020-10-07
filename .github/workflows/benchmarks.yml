@@ -23,8 +23,8 @@ jobs:
         cd src/frourio
         npx frourio
         cd ../../
-        cd src/frourio-fastify
-        npx frourio-fastify
+        cd src/frourio-express
+        npx frourio-express
         cd ../../
         npx tsc
         npm start y 100 10 40

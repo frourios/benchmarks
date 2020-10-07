@@ -1,4 +1,4 @@
-import express from 'express'
+import fastify from 'fastify'
 import server from './frourio/$server'
 
-server(express()).listen(3000)
+server(fastify()).listen(3000)
