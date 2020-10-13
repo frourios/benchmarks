@@ -1,4 +1,9 @@
 import express from 'express'
 import server from './frourio-express/$server'
 
-server(express()).listen(3000)
+const app = express()
+
+app.disable('etag')
+app.disable('x-powered-by')
+
+server(app).listen(3000)
