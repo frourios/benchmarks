@@ -42,7 +42,7 @@
     "fastify": "^3.7.0",
     "foxify": "^0.10.20",
     "frameguard": "^3.0.0",
-    "frourio": "^0.18.1",
+    "frourio": "^0.18.2",
     "frourio-express": "^0.18.1",
     "hide-powered-by": "^1.0.0",
     "hsts": "^2.1.0",
