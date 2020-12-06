@@ -39,7 +39,7 @@
     "dns-prefetch-control": "^0.1.0",
     "egg": "^2.19.0",
     "express": "^4.17.1",
-    "fastify": "^3.8.0",
+    "fastify": "^3.9.1",
     "foxify": "^0.10.20",
     "frameguard": "^3.0.0",
     "frourio": "^0.21.1",
