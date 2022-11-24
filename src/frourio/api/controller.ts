@@ -1,18 +1,17 @@
-import { defineResponseSchema, defineController } from './$relay'
-
-export const responseSchema = defineResponseSchema(() => ({
-  get: {
-    200: {
-      type: 'object',
-      properties: {
-        hello: {
-          type: 'string'
-        }
-      }
-    }
-  }
-}))
+import { defineController } from './$relay'
 
 export default defineController(() => ({
-  get: () => ({ status: 200, body: { hello: "world" } })
+  get: {
+    schemas: {
+      response: {
+        200: {
+          type: 'object',
+          properties: {
+            hello: { type: 'string' }
+          }
+        }
+      }
+    },
+    handler: () => ({ status: 200, body: { hello: "world" } })
+  }
 }))
