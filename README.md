@@ -38,43 +38,43 @@ benchmark [arguments (optional)]
 
 > You can also extend the comparison table with percentage values based on fastest result; `benchmark compare -p`
 # Benchmarks
-* __Machine:__ Linux fv-az803-855 5.15.0-1042-azure #49-Ubuntu SMP Tue Jul 11 17:28:46 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux | 2 vCPUs | 7GB.
+* __Machine:__ Linux fv-az451-60 5.15.0-1041-azure #48-Ubuntu SMP Tue Jun 20 20:34:08 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux | 2 vCPUs | 7GB.
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000` (two rounds; one to warm-up, one to measure).
-* __Node:__ `v18.17.0`
-* __Run:__ Sun Aug  6 10:43:29 UTC 2023
+* __Node:__ `v18.17.1`
+* __Run:__ Fri Sep  1 01:04:12 UTC 2023
 
 |                          | Version | Router | Requests/s | Latency | Throughput/Mb |
 | :--                      | --:     | --:    | :-:        | --:     | --:           |
-| bare                     | 14.15.1 | ✗      | 42146.4    | 2.28    | 7.52          |
-| frourio                  | 0.34.1  | ✓      | 41287.2    | 2.33    | 7.40          |
-| polka                    | 0.5.2   | ✓      | 41213.6    | 2.34    | 7.35          |
-| nest-fastify             | 7.6.18  | ✓      | 40596.6    | 2.38    | 6.81          |
-| fastify                  | 4.21.0  | ✓      | 40243.4    | 2.39    | 7.22          |
-| micro                    | 9.4.1   | ✗      | 39761.4    | 2.43    | 7.09          |
-| foxify                   | 0.10.20 | ✓      | 39551.4    | 2.44    | 6.49          |
-| connect                  | 3.7.0   | ✗      | 39262.4    | 2.46    | 7.00          |
-| yeps                     | 1.1.1   | ✗      | 38133.8    | 2.53    | 6.80          |
-| server-base              | 6.1.5   | ✗      | 37323.0    | 2.59    | 6.66          |
-| server-base-router       | 6.1.5   | ✓      | 37276.6    | 2.59    | 6.65          |
-| micro-route              | 2.5.0   | ✓      | 36922.2    | 2.61    | 6.58          |
-| connect-router           | 1.3.8   | ✓      | 36377.4    | 2.66    | 6.49          |
-| spirit                   | 0.6.1   | ✗      | 35206.2    | 2.33    | 6.28          |
-| vapr                     | 0.5.5   | ✓      | 33990.8    | 2.85    | 5.58          |
-| spirit-router            | 0.5.0   | ✓      | 32461.6    | 2.56    | 5.79          |
-| trek-router              | 1.2.0   | ✓      | 32241.4    | 3.02    | 5.29          |
-| trek-engine              | 1.0.5   | ✗      | 32175.8    | 3.03    | 5.28          |
-| koa                      | 2.14.2  | ✗      | 31933.6    | 3.05    | 5.69          |
-| yeps-router              | 1.2.0   | ✓      | 30748.0    | 3.16    | 5.48          |
-| polkadot                 | 1.0.0   | ✗      | 30242.4    | 3.23    | 5.39          |
-| koa-router               | 7.4.0   | ✓      | 29559.2    | 3.30    | 5.27          |
-| microrouter              | 3.1.3   | ✓      | 24923.2    | 3.91    | 4.44          |
-| egg.js                   | 2.37.0  | ✓      | 11372.6    | 8.72    | 4.00          |
-| frourio-express          | 0.34.0  | ✓      | 8424.8     | 11.72   | 1.50          |
-| express                  | 4.18.2  | ✓      | 8392.5     | 11.77   | 1.50          |
-| fastify-big-json         | 4.21.0  | ✓      | 8254.8     | 11.98   | 94.97         |
-| express-route-prefix     | 4.18.2  | ✓      | 7374.2     | 13.45   | 2.73          |
-| express-with-middlewares | 4.18.2  | ✓      | 7318.9     | 13.50   | 2.81          |
-| nest                     | 7.6.18  | ✓      | 7226.0     | 13.70   | 1.65          |
+| bare                     | 14.15.1 | ✗      | 28919.2    | 3.36    | 5.16          |
+| spirit                   | 0.6.1   | ✗      | 28215.6    | 3.20    | 5.03          |
+| micro                    | 9.4.1   | ✗      | 28062.0    | 3.47    | 5.00          |
+| polka                    | 0.5.2   | ✓      | 27272.0    | 3.56    | 4.86          |
+| fastify                  | 4.22.1  | ✓      | 27231.2    | 3.57    | 4.88          |
+| nest-fastify             | 7.6.18  | ✓      | 26824.0    | 3.64    | 4.50          |
+| frourio                  | 0.34.1  | ✓      | 26671.2    | 3.65    | 4.78          |
+| connect                  | 3.7.0   | ✗      | 26581.6    | 3.66    | 4.74          |
+| foxify                   | 0.10.20 | ✓      | 25990.0    | 3.75    | 4.26          |
+| spirit-router            | 0.5.0   | ✓      | 25019.2    | 3.52    | 4.46          |
+| server-base              | 6.1.5   | ✗      | 24304.8    | 4.01    | 4.33          |
+| server-base-router       | 6.1.5   | ✓      | 23839.6    | 4.09    | 4.25          |
+| yeps                     | 1.1.1   | ✗      | 23800.0    | 4.10    | 4.24          |
+| connect-router           | 1.3.8   | ✓      | 23315.1    | 4.19    | 4.16          |
+| micro-route              | 2.5.0   | ✓      | 23237.2    | 4.20    | 4.14          |
+| polkadot                 | 1.0.0   | ✗      | 22531.6    | 4.36    | 4.02          |
+| koa                      | 2.14.2  | ✗      | 21792.4    | 4.50    | 3.89          |
+| trek-engine              | 1.0.5   | ✗      | 21411.2    | 4.58    | 3.51          |
+| trek-router              | 1.2.0   | ✓      | 21305.1    | 4.60    | 3.49          |
+| yeps-router              | 1.2.0   | ✓      | 21191.2    | 4.62    | 3.78          |
+| vapr                     | 0.5.5   | ✓      | 20981.3    | 4.66    | 3.44          |
+| koa-router               | 7.4.0   | ✓      | 19767.7    | 4.98    | 3.53          |
+| microrouter              | 3.1.3   | ✓      | 17158.0    | 5.73    | 3.06          |
+| egg.js                   | 2.37.0  | ✓      | 7810.3     | 12.72   | 2.75          |
+| fastify-big-json         | 4.22.1  | ✓      | 7482.1     | 13.22   | 86.09         |
+| frourio-express          | 0.34.0  | ✓      | 6148.8     | 16.09   | 1.10          |
+| express                  | 4.18.2  | ✓      | 5986.7     | 16.53   | 1.07          |
+| express-route-prefix     | 4.18.2  | ✓      | 5938.7     | 16.71   | 2.20          |
+| express-with-middlewares | 4.18.2  | ✓      | 5375.0     | 18.47   | 2.06          |
+| nest                     | 7.6.18  | ✓      | 5152.9     | 19.22   | 1.17          |
 | hapi                     | 20.3.0  | ✓      | N/A        | N/A     | N/A           |
 | rayo                     | 1.4.0   | ✓      | N/A        | N/A     | N/A           |
 | restify                  | 8.6.1   | ✓      | N/A        | N/A     | N/A           |
