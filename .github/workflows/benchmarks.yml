@@ -3,7 +3,7 @@ name: Node benchmarks
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 0 1 * *'
@@ -19,7 +19,7 @@ jobs:
         node-version: 22
     - name: run benchmarks
       run: |
-        yarn install
+        npm install
         cd src/frourio
         npx frourio
         cd ../../
@@ -40,7 +40,7 @@ jobs:
         EOF)
         benchmark_table=$(node benchmark-compare.js -t -c)
         strip_readme=$(node -r fs -p 'fs.readFileSync("./README.md", "utf-8").split(/# Benchmarks/)[0]')
-        git checkout master
+        git checkout main
         echo -e "${strip_readme:?}\n${benchmark_title:?}\n\n${benchmark_table}" > README.md
         git add README.md
         git config user.name 'Github Actions'

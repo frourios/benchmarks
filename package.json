@@ -23,6 +23,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@fastify/multipart": "^9.0.3",
     "@hapi/hapi": "^20.0.3",
     "@leizm/web": "^2.6.0",
     "@nestjs/common": "^11.0.8",
@@ -71,7 +72,8 @@
     "vapr": "^0.5.5",
     "x-xss-protection": "^1.1.0",
     "yeps": "^1.1.1",
-    "yeps-router": "^1.2.0"
+    "yeps-router": "^1.2.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "snazzy": "^9.0.0",
