@@ -32,6 +32,9 @@ jobs:
     - name: Install dependencies
       run: npm i
 
+    - name: Build frourio
+      run: npm run build
+
     - name: Run benchmarks
       run: npm start y 100 10 40
 

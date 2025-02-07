@@ -159,3 +159,7 @@ profile*
 
 # benchmark results
 results
+
+# frourio
+benchmarks/frourio*
+$*.ts
